@@ -309,3 +309,106 @@ function toggleLanguage() {
         }
     });
 }
+
+
+/* ═══════════════════════════════
+   PREMIUM INTERACTIONS
+═══════════════════════════════ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Custom Cursor
+    const cursorDot = document.createElement("div");
+    cursorDot.className = "cursor-dot";
+    const cursorOutline = document.createElement("div");
+    cursorOutline.className = "cursor-outline";
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorOutline);
+
+    let mouseX = 0, mouseY = 0;
+    let outlineX = 0, outlineY = 0;
+
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+    });
+
+    function animateCursor() {
+        let distX = mouseX - outlineX;
+        let distY = mouseY - outlineY;
+        
+        outlineX += distX * 0.15;
+        outlineY += distY * 0.15;
+        
+        cursorOutline.style.left = `${outlineX}px`;
+        cursorOutline.style.top = `${outlineY}px`;
+        requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
+    // Hover interactions for cursor
+    document.documentElement.addEventListener('mouseover', (e) => {
+        const clickable = e.target.closest('a, button, .product-card, .btn-nav, .btn-primary, .btn-outline, .btn-lang, .hamburger');
+        if (clickable) {
+            cursorOutline.classList.add('hovered');
+            cursorDot.style.opacity = '0';
+        } else {
+            cursorOutline.classList.remove('hovered');
+            cursorDot.style.opacity = '1';
+        }
+    });
+
+    // 2. Setup 3D Tilt Glare Dynamically
+    document.querySelectorAll('.product-card').forEach(card => {
+        const glareContainer = document.createElement('div');
+        glareContainer.className = 'glare-container';
+        const glare = document.createElement('div');
+        glare.className = 'glare';
+        glareContainer.appendChild(glare);
+        card.appendChild(glareContainer);
+        
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -8; // max 8 deg tilt
+            const rotateY = ((x - centerX) / centerX) * 8;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            
+            // Move glare
+            glare.style.transform = `translate(${x - rect.width}px, ${y - rect.height}px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            glare.style.transform = `translate(0px, 0px)`;
+        });
+    });
+
+    // 3. Scroll Reveal Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+});
