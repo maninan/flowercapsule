@@ -30,7 +30,8 @@
         }
 
         body {
-            background: var(--navy);
+            background: radial-gradient(circle at top right, #102A43, var(--navy) 60%);
+            background-attachment: fixed;
             color: var(--white);
             font-family: var(--font-body);
             font-size: 16px;
@@ -1364,44 +1365,7 @@
    PREMIUM ANIMATIONS & EFFECTS
 ═══════════════════════════════ */
 
-/* 1. Cursor Glow */
-.cursor-dot,
-.cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
 
-@media (max-width: 1024px) {
-    .cursor-dot, .cursor-outline { display: none !important; }
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--teal);
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 196, 168, 0.15);
-    border: 1px solid rgba(0, 196, 168, 0.5);
-    transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-}
-
-/* Expanded state for hover */
-.cursor-outline.hovered {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 196, 168, 0.3);
-    border-color: transparent;
-}
 
 /* 2. Scroll Reveal Animations */
 .reveal {
@@ -1478,4 +1442,77 @@
 }
 .product-card:hover .glare {
     opacity: 1;
+}
+
+
+/* ═══════════════════════════════
+   FOOTER SOCIAL & SCROLL TOP
+═══════════════════════════════ */
+.footer-social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+}
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--gray);
+    transition: all 0.2s;
+}
+.footer-social a:hover {
+    color: var(--teal);
+    border-color: var(--teal);
+    background: rgba(0, 196, 168, 0.1);
+    transform: translateY(-3px);
+}
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+.footer-bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: -60px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    background: rgba(11, 22, 34, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 20px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.scroll-top.visible {
+    bottom: 32px;
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-top:hover {
+    background: var(--teal);
+    color: var(--navy);
+    transform: translateY(-5px);
 }

@@ -317,49 +317,6 @@ function toggleLanguage() {
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Custom Cursor
-    const cursorDot = document.createElement("div");
-    cursorDot.className = "cursor-dot";
-    const cursorOutline = document.createElement("div");
-    cursorOutline.className = "cursor-outline";
-    document.body.appendChild(cursorDot);
-    document.body.appendChild(cursorOutline);
-
-    let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
-
-    window.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.left = `${mouseX}px`;
-        cursorDot.style.top = `${mouseY}px`;
-    });
-
-    function animateCursor() {
-        let distX = mouseX - outlineX;
-        let distY = mouseY - outlineY;
-        
-        outlineX += distX * 0.15;
-        outlineY += distY * 0.15;
-        
-        cursorOutline.style.left = `${outlineX}px`;
-        cursorOutline.style.top = `${outlineY}px`;
-        requestAnimationFrame(animateCursor);
-    }
-    requestAnimationFrame(animateCursor);
-
-    // Hover interactions for cursor
-    document.documentElement.addEventListener('mouseover', (e) => {
-        const clickable = e.target.closest('a, button, .product-card, .btn-nav, .btn-primary, .btn-outline, .btn-lang, .hamburger');
-        if (clickable) {
-            cursorOutline.classList.add('hovered');
-            cursorDot.style.opacity = '0';
-        } else {
-            cursorOutline.classList.remove('hovered');
-            cursorDot.style.opacity = '1';
-        }
-    });
-
     // 2. Setup 3D Tilt Glare Dynamically
     document.querySelectorAll('.product-card').forEach(card => {
         const glareContainer = document.createElement('div');
@@ -392,7 +349,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    
+    // Scroll To Top Button Logic
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if(scrollBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // 3. Scroll Reveal Intersection Observer
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
