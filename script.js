@@ -442,3 +442,17 @@ function filterProducts(category) {
         }
     });
 }
+
+/* ═══════════════════════════════
+   GLOBAL EXPORTS
+   type="module" scripts run in their own scope.
+   Inline onclick handlers (e.g. onclick="toggleLanguage()")
+   need these functions on window to work.
+═══════════════════════════════ */
+window.toggleLanguage   = toggleLanguage;
+window.openModal        = openModal;
+window.closeModal       = closeModal;
+window.closeModalOutside = closeModalOutside;
+window.submitForm       = submitForm;
+window.filterProducts   = filterProducts;
+window.closeMobile      = closeMobile;
