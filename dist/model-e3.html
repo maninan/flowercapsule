@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Cabin E3 — Capsule Homes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/style-D1NLNhQK.css">
+</head>
+
+<body>
+
+    <!-- ════════ NAV ════════ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo">FLOWER SMART INTELLIGENT TECHNOLOGY </a>
+            <div class="nav-links">
+                <a href="/index.html#products">Products</a>
+                <a href="/index.html#customize">Customize</a>
+                <a href="/index.html#about">About Us</a>
+                <a href="/index.html#blog">Blog</a>
+                <a href="/index.html#contact">Contact</a>
+                <a href="/index.html#contact" class="btn-nav">Get a Quote</a>
+                <button id="langToggle" class="btn-lang" onclick="toggleLanguage()">中文</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/index.html#products" onclick="closeMobile()">Products</a>
+        <a href="/index.html#customize" onclick="closeMobile()">Customize</a>
+        <a href="/index.html#about" onclick="closeMobile()">About</a>
+        <a href="/index.html#blog" onclick="closeMobile()">Blog</a>
+        <a href="/index.html#contact" onclick="closeMobile()">Contact</a>
+        <a href="/index.html#contact" onclick="closeMobile()" class="btn-nav">Get a Quote</a>
+        <button id="langToggleMobile" class="btn-lang" onclick="toggleLanguage()" style="margin-top:10px;">中文</button>
+    </div>
+
+    <!-- ════════ HERO ════════ -->
+    <section class="hero product-hero" id="home">
+        <div class="hero-bg" style="background: linear-gradient(to right, rgba(11, 22, 34, .95) 30%, rgba(11, 22, 34, .5) 100%), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80') center/cover no-repeat;"></div>
+        <div class="hero-content">
+            <div class="label hero-tag fadein fadein-1" style="color:var(--teal);">2 Floor Flagship</div>
+            <h1 class="fadein fadein-2" style="font-size: clamp(48px, 6vw, 76px); margin-bottom:10px;">Orbit Cabin <br><span style="color:var(--white);">E3</span></h1>
+            <p class="fadein fadein-3">A double-decker smart capsule offering unparalleled space, luxury finishings, and a dedicated balcony. Built for families and premium resort stays.</p>
+            <div class="hero-btns fadein fadein-4">
+                <a href="#details" class="btn-primary">View Specifications</a>
+                <a href="/index.html#contact" class="btn-outline">Enquire Now</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ════════ IMAGE GALLERY STRIP ════════ -->
+    <div class="gallery-strip">
+        <div class="gallery-inner">
+            <div class="gallery-item tilt"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&q=80" alt="E3 Balcony View"></div>
+            <div class="gallery-item tilt"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="E3 Interior Layout"></div>
+            <div class="gallery-item tilt"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="E3 Bathroom"></div>
+            <div class="gallery-item tilt"><img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=600&q=80" alt="E3 Night Exterior"></div>
+        </div>
+    </div>
+
+    <!-- ════════ PRODUCT DETAILS ════════ -->
+    <section id="details" class="details-section">
+        <div class="container">
+            <div class="details-layout reveal">
+                <div class="details-specs">
+                    <div class="label">Specifications</div>
+                    <h2 style="margin-top:10px;margin-bottom:24px;">Technical Breakdown</h2>
+                    <div class="spec-table">
+                        <div class="spec-row"><span class="spec-key">Configuration</span><span class="spec-val">Flagship Dual-Floor</span></div>
+                        <div class="spec-row"><span class="spec-key">Floor 1 Size</span><span class="spec-val">L 11,500 × W 3,300 × H 3,200 mm</span></div>
+                        <div class="spec-row"><span class="spec-key">Floor 2 Size</span><span class="spec-val">L 8,500 × W 3,300 × H 3,200 mm</span></div>
+                        <div class="spec-row"><span class="spec-key">Total Floor Area</span><span class="spec-val">50 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">2</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">3–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Dry Weight</span><span class="spec-val">9,000 kg</span></div>
+                    </div>
+                </div>
+
+                <div class="details-includes">
+                    <div class="label">Features</div>
+                    <h2 style="margin-top:10px;margin-bottom:24px;">Included in the E3</h2>
+                    <ul class="includes-list">
+                        <li><strong>Premium Finishing:</strong> Eco wood flooring throughout both floors.</li>
+                        <li><strong>Fully Fitted Bathroom:</strong> Marble/ceramic tile, privacy glass door, custom vanity, mirror, toilet, luxury shower.</li>
+                        <li><strong>Interior Build:</strong> Integrated ceiling & wall modules with a standard calming colour palette.</li>
+                        <li><strong>Utilities:</strong> Full plumbing and wiring, bar area, and comprehensive lighting system.</li>
+                        <li><strong>Climate Control:</strong> 2P Midea inverter air conditioning (heating & cooling) plus hot water heater.</li>
+                        <li><strong>Smart Technology:</strong> Smart card-access power panel, mobile app door lock, multi-scene lighting control, and voice control standard.</li>
+                        <li><strong>Weatherproofing:</strong> Galvanised steel frame, fluorocarbon aluminium shell, tempered glass doors and windows.</li>
+                        <li><strong>Panoramic Balcony:</strong> Floor 2 features a fully integrated glass balcony.</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 60px; text-align: center;" class="reveal">
+                <a href="/index.html#contact" class="btn-primary" style="font-size:18px; padding: 18px 48px;">Request Quote for Orbit Cabin E3</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ FOOTER ════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-logo">FLOWER SMART</div>
+                <p>Jiangsu Flower Smart Technology Co., Ltd — modular capsule homes manufactured in Changzhou, Jiangsu,
+                    China.</p>
+                <p style="margin-top:8px;font-size:12px;color:#4A6070;">ridoyrkr@outlook.com · +86 132 2252 5102</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="/model-e3.html">E3 Orbit Cabin</a>
+                <a href="/index.html#products">E5 Nova Pod</a>
+                <a href="/index.html#products">E7 Stellar Lodge</a>
+                <a href="/index.html#products">F5 Dune Pod</a>
+                <a href="/index.html#products">F7 Ridge Cabin</a>
+                <a href="/index.html#products">Zenith Twin</a>
+            </div>
+            <div class="footer-col">
+                <h4>More Models</h4>
+                <a href="/index.html#products">N7 Forest Cabin</a>
+                <a href="/index.html#products">H7 Meadow Pod</a>
+                <a href="/index.html#products">H3 Steam Pod</a>
+                <a href="/index.html#customize">Custom Builds</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/index.html#about">About Us</a>
+                <a href="/index.html#blog">Blog</a>
+                <a href="/index.html#contact">Contact</a>
+                <a href="/index.html#contact">Get a Quote</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; width:100%;">
+                <p style="margin:0;">&copy; 2025 Jiangsu Flower Smart Technology Co., Ltd. All rights reserved.</p>
+                <div class="footer-social" style="display:flex; gap:16px;">
+                    <a href="https://baidu.com" target="_blank" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill="currentColor"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

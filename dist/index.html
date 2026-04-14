@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Smart Tech — Capsule Homes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/style-D1NLNhQK.css">
+</head>
+
+<body>
+
+    <!-- ════════ NAV ════════ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">FLOWER SMART INTELLIGENT TECHNOLOGY </a>
+            <div class="nav-links">
+                <a href="#products">Products</a>
+                <a href="#customize">Customize</a>
+                <a href="#about">About Us</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn-nav">Get a Quote</a>
+                <button id="langToggle" class="btn-lang" onclick="toggleLanguage()">中文</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#products" onclick="closeMobile()">Products</a>
+        <a href="#customize" onclick="closeMobile()">Customize</a>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#blog" onclick="closeMobile()">Blog</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+        <a href="#contact" onclick="closeMobile()" class="btn-nav">Get a Quote</a>
+        <button id="langToggleMobile" class="btn-lang" onclick="toggleLanguage()" style="margin-top:10px;">中文</button>
+    </div>
+
+    <!-- ════════ HERO ════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="label hero-tag fadein fadein-1">Smart Modular Living · Changzhou, China</div>
+            <h1 class="fadein fadein-2">Capsule Homes<br><span>Delivered Ready</span><br>to Live In.</h1>
+            <p class="fadein fadein-3">Factory-finished capsule houses for resorts, glamping, residential, and
+                commercial projects. Smart controls built in. Shipped anywhere.</p>
+            <div class="hero-btns fadein fadein-4">
+                <a href="#products" class="btn-primary">Explore Products</a>
+                <a href="#contact" class="btn-outline">Get a Quote</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-item reveal">
+                <div class="trust-num">9+</div>
+                <div class="trust-label">Capsule Models</div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-num">100%</div>
+                <div class="trust-label">Factory Finished</div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-num">Smart</div>
+                <div class="trust-label">Home Built-In</div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-num">Full</div>
+                <div class="trust-label">Interior Fit-Out</div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-num">Global</div>
+                <div class="trust-label">Shipping</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════ PRODUCTS ════════ -->
+    <section id="products">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="label">Our Products</div>
+                <h2>Space Capsule House Lineup</h2>
+                <p>Every model ships fully furnished with smart controls, panoramic glass, and a complete interior.
+                    Click any card to see full specs.</p>
+            </div>
+
+            <!-- PRODUCT FILTERS -->
+            <div class="product-filters reveal">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Models</button>
+                <button class="filter-btn" onclick="filterProducts('single')">Single Floor</button>
+                <button class="filter-btn" onclick="filterProducts('double')">Double Layer</button>
+                <button class="filter-btn" onclick="filterProducts('apple')">Apple Cabin</button>
+                <button class="filter-btn" onclick="filterProducts('specialty')">Specialty & Sauna</button>
+            </div>
+
+            <div class="products-grid" id="mainProductsGrid">
+
+                <!-- ORBIT CABIN E3 -->
+                <div class="product-card filter-item" data-category="double" onclick="window.location.href='/model-e3.html'">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80"
+                                alt="Orbit Cabin E3 — two-floor capsule house exterior">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model">E3</div>
+                        <div class="product-name">Orbit Cabin — 2 Floor Flagship</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">50 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">2</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">3–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">9,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- NOVA POD E5 -->
+                <div class="product-card featured filter-item" data-category="single" onclick="openModal('e5')">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=700&q=80"
+                                alt="Nova Pod E5 — single floor capsule house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model">E5</div>
+                        <div class="product-name">Nova Pod — Compact Single Floor</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- STELLAR LODGE E7 -->
+                <div class="product-card filter-item" data-category="single" onclick="openModal('e7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=700&q=80"
+                                alt="Stellar Lodge E7 — spacious single floor capsule">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model">E7</div>
+                        <div class="product-name">Stellar Lodge — Spacious Single</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- DUNE POD F5 -->
+                <div class="product-card filter-item" data-category="single" onclick="openModal('f5')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700&q=80"
+                                alt="Dune Pod F5 capsule house cabin">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model">F5</div>
+                        <div class="product-name">Dune Pod — Desert Edition</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- RIDGE CABIN F7 -->
+                <div class="product-card filter-item" data-category="single" onclick="openModal('f7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=700&q=80"
+                                alt="Ridge Cabin F7 mountain capsule house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model">F7</div>
+                        <div class="product-name">Ridge Cabin — Mountain Edition</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- ZENITH TWIN — Double Layer -->
+                <div class="product-card filter-item" data-category="double" onclick="openModal('dbl')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=700&q=80"
+                                alt="Zenith Twin double layer capsule house cluster">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">ZENITH</div>
+                        <div class="product-name">Zenith Twin — Double Layer Cluster</div>
+                        <div class="spec-row"><span class="spec-key">Configuration</span><span class="spec-val">3×3 units</span></div>
+                        <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">2</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- FOREST CABIN N7 -->
+                <div class="product-card filter-item" data-category="apple" onclick="openModal('n7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="/assets/apple_cabin-CCUrLXDB.png" alt="Forest Cabin N7 Apple Cabin capsule house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">N7</div>
+                        <div class="product-name">Forest Cabin — Apple Series</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- MEADOW POD H7 -->
+                <div class="product-card filter-item" data-category="apple" onclick="openModal('h7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=700&q=80"
+                                alt="Meadow Pod H7 Apple Cabin house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">H7</div>
+                        <div class="product-name">Meadow Pod — Apple Series</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,500 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- STEAM POD H3 -->
+                <div class="product-card filter-item" data-category="specialty" onclick="openModal('h3')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80"
+                                alt="Steam Pod H3 sauna capsule house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">H3</div>
+                        <div class="product-name">Steam Pod — Sauna Edition</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">20 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">4,500 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ FEATURES STRIP ════════ -->
+    <div class="features-strip">
+        <div class="container">
+            <div class="label">Included in every unit</div>
+            <h2 style="margin-top:10px;">What You See Is What You Get</h2>
+            <div class="features-grid">
+                <div class="feature-item reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <h3>Full Interior</h3>
+                    <p>Eco wood floors, marble bathroom, custom vanity, bar area — completely finished.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Smart Home</h3>
+                    <p>Card-access power, voice control, app door lock, multi-scene lighting — all standard.</p>
+                </div>
+                <div class="feature-icon" style="display:none"></div>
+                <div class="feature-item reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Ready in Days</h3>
+                    <p>Factory finished and shipped ready. No on-site construction. Move in immediately.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Weather-Proof</h3>
+                    <p>Galvanised steel frame, fluorocarbon aluminium shell, tempered glass — built to last outdoors.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════ CUSTOMIZE ════════ -->
+    <section id="customize">
+        <div class="container">
+            <div class="customize-layout reveal">
+                <div>
+                    <div class="label">Customization</div>
+                    <h2 style="margin-top:10px;margin-bottom:14px;">Built to<br>Your Brief</h2>
+                    <p>Our standard models are the starting point. We adjust the layout, exterior finish, interior
+                        configuration, and use case to match your project — from a resort glamping pod to a branded tea
+                        room.</p>
+                    <div class="customize-options">
+                        <div class="customize-item">
+                            <h3>Layout & Floor Plan</h3>
+                            <p>Room divisions, open-plan vs. partitioned, double-layer clusters — all adjustable.</p>
+                        </div>
+                        <div class="customize-item">
+                            <h3>Exterior Design</h3>
+                            <p>Custom colours, branded shell panels, themed shapes (Shark Capsule, Apple Cabin, and
+                                more).</p>
+                        </div>
+                        <div class="customize-item">
+                            <h3>Interior Fit-Out</h3>
+                            <p>Flooring, tile selection, vanity style, lighting packages, furniture layout — your
+                                choice.</p>
+                        </div>
+                        <div class="customize-item">
+                            <h3>Use Case</h3>
+                            <p>Glamping · Residential · Commercial · Sauna & Wellness · Tea Room · Pop-up Retail.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:28px;">
+                        <a href="#contact" class="btn-primary">Discuss Your Project →</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="customize-img">
+                        <div class="customize-img-label">Custom — Shark Capsule & Tea Room builds available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ ABOUT ════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-layout reveal">
+                <div class="about-img-stack">
+                    <div class="about-img-main"></div>
+                    <div class="about-img-accent"></div>
+                </div>
+                <div class="about-text">
+                    <div class="label">About Us</div>
+                    <h2>Jiangsu Flower Smart Technology Co., Ltd</h2>
+                    <p>We design, manufacture, and deliver fully finished capsule homes from our factory in Changzhou,
+                        Jiangsu, China. Every unit leaves our facility complete, furnished, and ready to live in the
+                        moment it arrives on site.</p>
+                    <p>Our team covers the full pipeline — research & development, precision manufacturing, and both
+                        domestic and international sales networks. We work with resort developers, glamping operators,
+                        residential buyers, and commercial clients worldwide.</p>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-dot"></div>
+                            <div class="value-text"><strong>Factory-finished quality.</strong> No on-site construction
+                                surprises — what you see in the showroom is what arrives.</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-dot"></div>
+                            <div class="value-text"><strong>Smart by default.</strong> Smart home technology is standard
+                                on every model, not an add-on.</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-dot"></div>
+                            <div class="value-text"><strong>Fully customisable.</strong> From a standard shell to a
+                                fully themed bespoke build — we match your brief.</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-dot"></div>
+                            <div class="value-text"><strong>Global export ready.</strong> We ship internationally and
+                                support international clients end to end.</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:28px;">
+                        <a href="#contact" class="btn-outline">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ BLOG ════════ -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="label">Blog</div>
+                <h2>From the Founders</h2>
+                <p>Honest writing about why we build this way, what problem we're solving, and where modular living is
+                    headed.</p>
+            </div>
+            <div class="blog-grid">
+
+                <div class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80"
+                            alt="Factory modular construction blog">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-cat">Founder's Note · Vision</div>
+                        <h3>Why we build in a factory, not on a construction site</h3>
+                        <p>Traditional construction is slow and impossible to scale. We asked: what if a quality home
+                            could be manufactured like a precision product?</p>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80"
+                            alt="Resort glamping capsule houses">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-cat">Industry · Hospitality</div>
+                        <h3>The demand for resort accommodation is growing faster than builders can supply it</h3>
+                        <p>Tourism is recovering globally. Capsule homes deploy in days — here's why that changes
+                            everything for resort developers.</p>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                            alt="Custom capsule house design brief">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-cat">Design Story · Custom</div>
+                        <h3>From standard shell to shark capsule — how a custom build works</h3>
+                        <p>A client brief becomes a finished themed capsule home. Walk through a real project from
+                            concept to delivery.</p>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ CONTACT ════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <div class="label">Contact Us</div>
+                    <h2>Get in Touch</h2>
+                    <p>Product enquiries, custom project briefs, or general questions — we aim to reply within 24 hours.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-val">ridoyrkr@outlook.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.6a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Phone / WhatsApp</div>
+                                <div class="contact-val">+86 132 2252 5102</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Address</div>
+                                <div class="contact-val">Changzhou, Jiangsu, China</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send an Enquiry</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product">
+                                <option value="">Select a model...</option>
+                                <option>E3 — Orbit Cabin (50㎡, 2F)</option>
+                                <option>E5 — Nova Pod (28㎡)</option>
+                                <option>E7 — Stellar Lodge (38㎡)</option>
+                                <option>F5 — Dune Pod (28㎡)</option>
+                                <option>F7 — Ridge Cabin (38㎡)</option>
+                                <option>Zenith Twin — Double Layer</option>
+                                <option>N7 — Forest Cabin (Apple)</option>
+                                <option>H7 — Meadow Pod (Apple)</option>
+                                <option>H3 — Steam Pod (Sauna)</option>
+                                <option>Custom / Bespoke Build</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="units">Number of Units</label>
+                            <input type="text" id="units" placeholder="e.g. 5–10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about your project</label>
+                        <textarea id="message"
+                            placeholder="Location, use case (resort, glamping, residential...), timeline, budget range, any special requirements..."></textarea>
+                    </div>
+                    <button class="form-submit" onclick="submitForm()">Send Enquiry →</button>
+                    <p class="form-note">We reply within 24 hours · All enquiries are confidential</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ FOOTER ════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-logo">FLOWER SMART</div>
+                <p>Jiangsu Flower Smart Technology Co., Ltd — modular capsule homes manufactured in Changzhou, Jiangsu,
+                    China.</p>
+                <p style="margin-top:8px;font-size:12px;color:#4A6070;">ridoyrkr@outlook.com · +86 132 2252 5102</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#products">E3 Orbit Cabin</a>
+                <a href="#products">E5 Nova Pod</a>
+                <a href="#products">E7 Stellar Lodge</a>
+                <a href="#products">F5 Dune Pod</a>
+                <a href="#products">F7 Ridge Cabin</a>
+                <a href="#products">Zenith Twin</a>
+            </div>
+            <div class="footer-col">
+                <h4>More Models</h4>
+                <a href="#products">N7 Forest Cabin</a>
+                <a href="#products">H7 Meadow Pod</a>
+                <a href="#products">H3 Steam Pod</a>
+                <a href="#customize">Custom Builds</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact">Get a Quote</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+        <div class="footer-bottom-inner" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; width:100%;">
+            <p style="margin:0;">&copy; 2025 Jiangsu Flower Smart Technology Co., Ltd. All rights reserved.</p>
+            <div class="footer-social" style="display:flex; gap:16px;">
+                <a href="https://baidu.com" target="_blank" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                </a>
+                <a href="https://baidu.com" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://baidu.com" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+            <p>Changzhou, Jiangsu, China</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/8613222525102" class="wa-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- ════════ PRODUCT MODAL ════════ -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal" id="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-img" id="modalImg"></div>
+            <div class="modal-body">
+                <div class="modal-model" id="modalModel"></div>
+                <div class="modal-name" id="modalName"></div>
+                <div class="modal-specs" id="modalSpecs"></div>
+                <div class="modal-includes">
+                    <h4>Included in every unit</h4>
+                    <div class="modal-feature-list">
+                        <div class="modal-feature">Eco wood flooring throughout</div>
+                        <div class="modal-feature">Marble / ceramic tile bathroom, privacy glass door, custom vanity,
+                            mirror, toilet, shower</div>
+                        <div class="modal-feature">Integrated ceiling & wall modules — standard colour palette</div>
+                        <div class="modal-feature">Bar area · full lighting system · full plumbing</div>
+                        <div class="modal-feature">2P Midea inverter air conditioning (heating & cooling) + hot water
+                            heater</div>
+                        <div class="modal-feature">Smart card-access power panel + mobile app door lock</div>
+                        <div class="modal-feature">Multi-scene lighting control + voice control</div>
+                        <div class="modal-feature">Galvanised steel frame · fluorocarbon aluminium shell · tempered
+                            glass doors, windows & skylight</div>
+                        <div class="modal-feature">Panoramic balcony (applicable models)</div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary modal-cta" onclick="closeModal()">Get a Quote for This Model →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <a href="#home" id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">&#8593;</a>
+</body>
+
+</html>

@@ -99,10 +99,20 @@
                 <p>Every model ships fully furnished with smart controls, panoramic glass, and a complete interior.
                     Click any card to see full specs.</p>
             </div>
-            <div class="products-grid">
+
+            <!-- PRODUCT FILTERS -->
+            <div class="product-filters reveal">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Models</button>
+                <button class="filter-btn" onclick="filterProducts('single')">Single Floor</button>
+                <button class="filter-btn" onclick="filterProducts('double')">Double Layer</button>
+                <button class="filter-btn" onclick="filterProducts('apple')">Apple Cabin</button>
+                <button class="filter-btn" onclick="filterProducts('specialty')">Specialty & Sauna</button>
+            </div>
+
+            <div class="products-grid" id="mainProductsGrid">
 
                 <!-- ORBIT CABIN E3 -->
-                <div class="product-card" onclick="openModal('e3')">
+                <div class="product-card filter-item" data-category="double" onclick="window.location.href='/model-e3.html'">
                     <div class="product-img">
                         <div class="product-img-inner">
                             <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80"
@@ -112,19 +122,16 @@
                     <div class="product-body">
                         <div class="product-model">E3</div>
                         <div class="product-name">Orbit Cabin — 2 Floor Flagship</div>
-                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">50 ㎡</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">50 ㎡</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">2</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">3–4
-                                people</span></div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">9,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">3–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">9,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
                 <!-- NOVA POD E5 -->
-                <div class="product-card featured" onclick="openModal('e5')">
+                <div class="product-card featured filter-item" data-category="single" onclick="openModal('e5')">
                     <div class="featured-badge">Most Popular</div>
                     <div class="product-img">
                         <div class="product-img-inner">
@@ -135,19 +142,16 @@
                     <div class="product-body">
                         <div class="product-model">E5</div>
                         <div class="product-name">Nova Pod — Compact Single Floor</div>
-                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span>
-                        </div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
                 <!-- STELLAR LODGE E7 -->
-                <div class="product-card" onclick="openModal('e7')">
+                <div class="product-card filter-item" data-category="single" onclick="openModal('e7')">
                     <div class="product-img">
                         <div class="product-img-inner">
                             <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=700&q=80"
@@ -157,19 +161,16 @@
                     <div class="product-body">
                         <div class="product-model">E7</div>
                         <div class="product-name">Stellar Lodge — Spacious Single</div>
-                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4
-                                people</span></div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
                 <!-- DUNE POD F5 -->
-                <div class="product-card" onclick="openModal('f5')">
+                <div class="product-card filter-item" data-category="single" onclick="openModal('f5')">
                     <div class="product-img">
                         <div class="product-img-inner">
                             <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700&q=80"
@@ -179,19 +180,16 @@
                     <div class="product-body">
                         <div class="product-model">F5</div>
                         <div class="product-name">Dune Pod — Desert Edition</div>
-                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">28 ㎡</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span>
-                        </div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">6,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
                 <!-- RIDGE CABIN F7 -->
-                <div class="product-card" onclick="openModal('f7')">
+                <div class="product-card filter-item" data-category="single" onclick="openModal('f7')">
                     <div class="product-img">
                         <div class="product-img-inner">
                             <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=700&q=80"
@@ -201,19 +199,16 @@
                     <div class="product-body">
                         <div class="product-model">F7</div>
                         <div class="product-name">Ridge Cabin — Mountain Edition</div>
-                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">1</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4
-                                people</span></div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
                 <!-- ZENITH TWIN — Double Layer -->
-                <div class="product-card" onclick="openModal('dbl')">
+                <div class="product-card filter-item" data-category="double" onclick="openModal('dbl')">
                     <div class="product-img">
                         <div class="product-img-inner">
                             <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=700&q=80"
@@ -223,86 +218,67 @@
                     <div class="product-body">
                         <div class="product-model" style="font-size:22px;">ZENITH</div>
                         <div class="product-name">Zenith Twin — Double Layer Cluster</div>
-                        <div class="spec-row"><span class="spec-key">Configuration</span><span class="spec-val">3×3
-                                units</span></div>
+                        <div class="spec-row"><span class="spec-key">Configuration</span><span class="spec-val">3×3 units</span></div>
                         <div class="spec-row"><span class="spec-key">Floors</span><span class="spec-val">2</span></div>
-                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">4 people</span>
-                        </div>
-                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span>
-                        </div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
                         <span class="card-cta">View Details →</span>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- APPLE CABIN ROW -->
-            <div style="margin-top:48px;">
-                <div class="label" style="margin-bottom:10px;">Also Available</div>
-                <h3 style="margin-bottom:24px;font-size:28px;">Apple Cabin & Specialty Models</h3>
-                <div class="products-grid">
-
-                    <div class="product-card" onclick="openModal('n7')">
-                        <div class="product-img">
-                            <div class="product-img-inner">
-                                <img src="apple_cabin.png"
-                                    alt="Forest Cabin N7 Apple Cabin capsule house">
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <div class="product-model" style="font-size:22px;">N7</div>
-                            <div class="product-name">Forest Cabin — Apple Series</div>
-                            <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38
-                                    ㎡</span></div>
-                            <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4
-                                    people</span></div>
-                            <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000
-                                    kg</span></div>
-                            <span class="card-cta">View Details →</span>
+                <!-- FOREST CABIN N7 -->
+                <div class="product-card filter-item" data-category="apple" onclick="openModal('n7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="apple_cabin.png" alt="Forest Cabin N7 Apple Cabin capsule house">
                         </div>
                     </div>
-
-                    <div class="product-card" onclick="openModal('h7')">
-                        <div class="product-img">
-                            <div class="product-img-inner">
-                                <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=700&q=80"
-                                    alt="Meadow Pod H7 Apple Cabin house">
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <div class="product-model" style="font-size:22px;">H7</div>
-                            <div class="product-name">Meadow Pod — Apple Series</div>
-                            <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38
-                                    ㎡</span></div>
-                            <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4
-                                    people</span></div>
-                            <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,500
-                                    kg</span></div>
-                            <span class="card-cta">View Details →</span>
-                        </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">N7</div>
+                        <div class="product-name">Forest Cabin — Apple Series</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,000 kg</span></div>
+                        <span class="card-cta">View Details →</span>
                     </div>
-
-                    <div class="product-card" onclick="openModal('h3')">
-                        <div class="product-img">
-                            <div class="product-img-inner">
-                                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80"
-                                    alt="Steam Pod H3 sauna capsule house">
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <div class="product-model" style="font-size:22px;">H3</div>
-                            <div class="product-name">Steam Pod — Sauna Edition</div>
-                            <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">20
-                                    ㎡</span></div>
-                            <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2
-                                    people</span></div>
-                            <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">4,500
-                                    kg</span></div>
-                            <span class="card-cta">View Details →</span>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- MEADOW POD H7 -->
+                <div class="product-card filter-item" data-category="apple" onclick="openModal('h7')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=700&q=80"
+                                alt="Meadow Pod H7 Apple Cabin house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">H7</div>
+                        <div class="product-name">Meadow Pod — Apple Series</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">38 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2–4 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">7,500 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- STEAM POD H3 -->
+                <div class="product-card filter-item" data-category="specialty" onclick="openModal('h3')">
+                    <div class="product-img">
+                        <div class="product-img-inner">
+                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80"
+                                alt="Steam Pod H3 sauna capsule house">
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-model" style="font-size:22px;">H3</div>
+                        <div class="product-name">Steam Pod — Sauna Edition</div>
+                        <div class="spec-row"><span class="spec-key">Floor area</span><span class="spec-val">20 ㎡</span></div>
+                        <div class="spec-row"><span class="spec-key">Guests</span><span class="spec-val">2 people</span></div>
+                        <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">4,500 kg</span></div>
+                        <span class="card-cta">View Details →</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

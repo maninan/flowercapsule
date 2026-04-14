@@ -387,3 +387,33 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 });
+
+/* ═══════════════════════════════
+   PRODUCT FILTERING
+═══════════════════════════════ */
+function filterProducts(category) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    if (event && event.target && event.target.classList.contains('filter-btn')) {
+        event.target.classList.add('active');
+    }
+
+    const items = document.querySelectorAll('.filter-item');
+    items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+            setTimeout(() => { 
+                item.style.opacity = '1'; 
+                item.style.transform = 'translateY(0) scale(1)'; 
+            }, 50);
+        } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(() => { 
+                if(item.style.opacity === '0') {
+                    item.style.display = 'none'; 
+                }
+            }, 300);
+        }
+    });
+}
