@@ -4,6 +4,21 @@
             nav.classList.toggle('scrolled', window.scrollY > 60);
         });
 
+        /* REVEAL ON ANCHOR NAVIGATION
+           When a user clicks a nav link (e.g. #about), the browser jumps
+           instantly. This listener fires after the scroll lands and activates
+           any .reveal elements that are now in view. */
+        window.addEventListener('hashchange', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.reveal:not(.active)').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 150);
+        });
+
         /* HAMBURGER */
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -367,18 +382,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 3. Scroll Reveal Intersection Observer
-
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -386,6 +400,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
     });
+
+    // Fallback: activate any reveals already in the viewport on page load
+    // (e.g. when user navigates directly to a section via anchor link)
+    setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.active)').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('active');
+            }
+        });
+    }, 200);
 });
 
 /* ═══════════════════════════════
